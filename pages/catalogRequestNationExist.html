@@ -38,7 +38,6 @@
         <tr>
           <th style="text-align: center;">数据资源目录名称</th>
           <th style="text-align: center;">数据资源提供方</th>
-          <th style="text-align: center;">更新时间</th>
           <th style="text-align: center;">填写状态</th>
           <th style="text-align: center;">查看</th>
           <th style="text-align: center;">更新</th>
@@ -52,15 +51,15 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-xs-6 text-left vertical-center">
-          <!-- 右侧元素 -->
-          <label for="rows-per-page" style="font-size: 15">每页显示数量:</label>
-          <select id="rows-per-page" style="font-size: 15" onchange="updateTable()">
-            <option value="50">50</option>
-            <option value="100">100</option>
+        <!-- <div class="col-xs-6 text-left vertical-center">
+          右侧元素 -->
+        <!-- <label for="rows-per-page" style="font-size: 15">每页显示数量:</label> -->
+        <!-- <select id="rows-per-page" style="font-size: 15" onchange="updateTable()"> -->
+        <!-- <option value="50">50</option> -->
+        <!-- <option value="100">100</option>
             <option value="150">150</option>
-          </select>
-        </div>
+          </select> -->
+        <!-- </div> -->
         <div class="col-xs-6 text-right">
           <nav aria-label="Page navigation">
             <ul class="pagination" id="pagination">
@@ -86,7 +85,7 @@
           <form id="editForm">
             <div class="form-group">
               <label for="itemName">产生该需求的事项名称</label>
-              <input type="text" class="form-control" id="itemName" placeholder="请输入产生该需求的事项名称" readonly />
+              <input type="text" class="form-control" id="itemName" placeholder="请输入产生该需求的事项名称" required="true" />
             </div>
             <div class="form-group">
               <label for="applySituation">应用场景/相关依据</label>
@@ -116,16 +115,11 @@
             </div>
             <div class="form-group" id="jectReasonInput" style="display: block;">
               <label for="rejectReason">驳回理由</label>
-              <input type="text" class="form-control" id="rejectReason" placeholder="请输入驳回理由" required="true" />
+              <input type="text" class="form-control" id="rejectReason" placeholder="请输入驳回理由"/>
             </div>
             <div class="form-group">
               <label for="orgName">数据资源提供方</label>
-              <input
-                type="text"
-                class="form-control"
-                id="orgName"
-                readonly
-              />
+              <input type="text" class="form-control" id="orgName" readonly />
             </div>
             <div class="form-group">
               <label for="cataTitle">目录名称</label>
@@ -153,7 +147,7 @@
             </div>
             <div class="form-group">
               <label for="shareWay">共享方式</label>
-              <select class="form-control" id="shareWay" disabled>
+              <select class="form-control" id="shareWay">
                 <option value="0101">接口</option>
                 <option value="0102">库表</option>
                 <option value="0103">文件</option>
@@ -208,75 +202,69 @@
           <form>
             <div class="form-group">
               <label for="itemNameShow">产生该需求的事项名称</label>
-              <input type="text" class="form-control" id="itemNameShow" placeholder="请输入产生该需求的事项名称" required="true" />
+              <input type="text" class="form-control" id="itemNameShow" placeholder="请输入产生该需求的事项名称" readonly />
             </div>
             <div class="form-group">
               <label for="applySituationShow">应用场景/相关依据</label>
-              <input type="text" class="form-control" id="applySituationShow" placeholder="请输入应用场景/相关依据"
-                required="true" />
+              <input type="text" class="form-control" id="applySituationShow" placeholder="请输入应用场景/相关依据" readonly />
             </div>
             <div class="form-group">
               <label for="fileNameShow">材料名称</label>
-              <input type="text" class="form-control" id="fileNameShow" placeholder="请输入文件名称" required="true" />
+              <input type="text" class="form-control" id="fileNameShow" placeholder="请输入文件名称" readonly />
             </div>
             <div class="form-group">
               <label for="needFileShow">是否需要版式文件</label>
-              <select class="form-control" id="needFileShow" required="true">
+              <select class="form-control" id="needFileShow" disabled>
                 <option value="1">是</option>
                 <option value="0">否</option>
               </select>
             </div>
             <div class="form-group">
               <label for="systemNameShow">用数系统名称</label>
-              <input type="text" class="form-control" id="systemNameShow" placeholder="请输入用数系统名称" required="true" />
+              <input type="text" class="form-control" id="systemNameShow" placeholder="请输入用数系统名称" readonly />
             </div>
             <div class="form-group">
               <label for="applyUploadedShow">是否已提交共享申请</label>
-              <select class="form-control" id="applyUploadedShow" required="true">
+              <select class="form-control" id="applyUploadedShow" disabled>
                 <option value="1">是</option>
                 <option value="0">否</option>
               </select>
             </div>
             <div class="form-group" id="rejectReasonDiv" style="display: block">
               <label for="rejectReasonShow">驳回理由</label>
-              <input type="text" class="form-control" id="rejectReasonShow" placeholder="请输入驳回理由" required="true" />
+              <input type="text" class="form-control" id="rejectReasonShow" placeholder="请输入驳回理由" readonly />
             </div>
             <div class="form-group">
               <label for="orgNameShow">数据资源提供方</label>
-              <input
-                type="text"
-                class="form-control"
-                id="orgNameShow"
-                readonly
-              />
+              <input type="text" class="form-control" id="orgNameShow" readonly />
             </div>
             <div class="form-group">
               <label for="cataTitleShow">目录名称</label>
-              <input type="text" class="form-control" id="cataTitleShow" placeholder="请输入数据资源目录名称" required="true" />
+              <input type="text" class="form-control" id="cataTitleShow" placeholder="请输入数据资源目录名称" readonly />
             </div>
             <div class="form-group">
               <label for="dataTypeShow">信息项</label>
               <textarea type="text" class="form-control" id="dataTypeShow" rows="3" placeholder="请输入信息项，以逗号隔开"
-                required="true"></textarea>
+                readonly></textarea>
             </div>
             <div class="form-group">
               <label for="dataNameShow">数据名称</label>
-              <input type="text" class="form-control" id="dataNameShow" placeholder="请输入数据名称" required="true" />
+              <input type="text" class="form-control" id="dataNameShow" placeholder="请输入数据名称" readonly />
             </div>
             <div class="form-group">
               <label for="dataSourceShow">数据来源依据</label>
-              <input type="text" class="form-control" id="dataSourceShow" placeholder="数据来源依据" required="true" />
+              <input type="text" class="form-control" id="dataSourceShow" placeholder="数据来源依据" readonly />
             </div>
             <div class="form-group">
               <label for="isInListShow">是否在共享责任清单中</label>
-              <select class="form-control" id="isInListShow" required="true">
+              <select class="form-control" id="isInListShow" disabled>
                 <option value="1">是</option>
                 <option value="0">否</option>
               </select>
             </div>
             <div class="form-group">
               <label for="shareWayShow">共享方式</label>
-              <select class="form-control" id="shareWayShow" required="true">
+              <select class="form-control" id="shareWayShow" disabled>
                 <option value="0101">接口</option>
                 <option value="0102">库表</option>
                 <option value="0103">文件</option>
@@ -284,7 +272,7 @@
             </div>
             <div class="form-group">
               <label for="updateTimeShow">数据更新周期</label>
-              <select class="form-control" id="updateTimeShow" required="true">
+              <select class="form-control" id="updateTimeShow" disabled>
                 <option value="1">其他</option>
                 <option value="2">每日</option>
                 <option value="3">每周</option>
@@ -297,15 +285,15 @@
             </div>
             <div class="form-group">
               <label for="contactPersonShow">联系人</label>
-              <input type="text" class="form-control" id="contactPersonShow" placeholder="联系人" required="true" />
+              <input type="text" class="form-control" id="contactPersonShow" placeholder="联系人" readonly />
             </div>
             <div class="form-group">
               <label for="contactPhoneShow">联系电话</label>
-              <input type="text" class="form-control" id="contactPhoneShow" placeholder="联系电话" required="true" />
+              <input type="text" class="form-control" id="contactPhoneShow" placeholder="联系电话" readonly />
             </div>
             <div class="form-group">
               <label for="contactMailShow">联系邮箱</label>
-              <input type="text" class="form-control" id="contactMailShow" placeholder="联系电话" required="true" />
+              <input type="text" class="form-control" id="contactMailShow" placeholder="联系电话" readonly />
             </div>
         </div>
       </div>
@@ -325,7 +313,7 @@
   <script>
     // 刷新数据
     var currentData;
-    var data;
+    var data = [];
     var orgList = [];
     $("#showModal").on("show.bs.modal", function (event) {
       var button = $(event.relatedTarget);
@@ -336,23 +324,23 @@
       $("#applySituationShow").val(currentData.applySituation);
       $("#fileNameShow").val(currentData.fileName);
       $("#needFileShow").val(currentData.needFile);
-      $("#systemNameShow").text(currentData.systemName);
+      $("#systemNameShow").val(currentData.systemName);
       $("#applyUploadedShow").val(currentData.applyUploaded);
-      $("#rejectReasonShow").text(currentData.rejectReason);
+      $("#rejectReasonShow").val(currentData.rejectReason);
       $("#orgNameShow").val(currentData.orgName);
       $("#cataTitleShow").val(currentData.cataTitle);
-      $("#dataTypeShow").val(currentData.dataType);
+      $("#dataTypeShow").val(currentData.nameCn);
       $("#dataNameShow").val(currentData.dataName);
       $("#dataSourceShow").val(currentData.dataSource);
       $("#isInListShow").val(currentData.isInList);
-      $("#shareWayShow").val(currentData.shareWay);
-      $("#updateTimeShow").val(currentData.updateTime);
+      $("#shareWayShow").val(currentData.sharedWay);
+      $("#updateTimeShow").val(currentData.updateCycle);
       $("#contactPersonShow").val(currentData.contactPerson);
       $("#contactPhoneShow").val(currentData.contactPhone);
       $("#contactMailShow").val(currentData.contactMail);
-      var rejectReasonDiv = document.getElementById("applyUploadedShow");
+      var rejectReasonDiv = document.getElementById("rejectReasonDiv");
       rejectReasonDiv.style.display =
-          currentData.isSystem === "1" ? "block" : "none";
+        currentData.applyUploaded == 1 ? "block" : "none";
     });
 
     $("#editModal").on("show.bs.modal", function (event) {
@@ -361,9 +349,8 @@
       getDetail(moaldata);
       if (!currentData) return;
       $("#itemName").val(currentData.itemName);
-      $("#orgName").val(currentData.orgCode);
+      $("#orgName").val(currentData.orgName);
       $("#cataTitle").val(currentData.cataTitle);
-      $("#shareWay").val(currentData.shareWay);
     });
 
     $(document).ready(function () {
@@ -394,7 +381,7 @@
         };
         var phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/;
         var tellReg = /^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/;
-        if (!phoneReg.test(newCata.contactPhone && !tellReg.test(tellReg))) {
+        if (!phoneReg.test(newCata.contactPhone) && !tellReg.test(tellReg)) {
           showToast("电话格式错误")
           return;
         }
@@ -404,8 +391,8 @@
             newCata.orgName = org.orgName
           }
         }
-        newCata.id = currentData.id;
-        await addNewCata(newCata);
+        newCata.id = currentData ? currentData.id : null;
+        await updateNewCata(newCata);
         await updateTable();
         // 在这里执行提交数据的操作，可以使用AJAX请求或其他方式
 
@@ -439,16 +426,14 @@
       var tableBody = document.getElementById("table-body");
       tableBody.innerHTML = ""; // 清空表格内容
 
-      for (var i = startIndex; i < endIndex && i < data.length; i++) {
+      for (var i = 0; i < data.length; i++) {
         var row = data[i];
-        var statue = row.statue === 1 ? '已填写' : '未填写'
+        var statue = row.status === 1 ? '已填写' : '未填写'
         var rowHtml =
           "<tr><td>" +
           row.cataTitle +
           "</td><td>" +
           row.orgName +
-          "</td><td>" +
-          row.creatTime +
           "</td><td>" +
           statue +
           "</td><td>" +
@@ -457,9 +442,9 @@
           ">查看</button>" +
           '</td><td><button class="btn btn-success"" data-toggle="modal" data-target="#editModal" data-mydata=' +
           row.guid +
-          "')\">编辑目录</button>" +
+          ">编辑目录</button>" +
           '</td><td><button class="btn btn-danger" onclick="deleteRow(\'' +
-          row +
+          row.guid +
           "')\">删除目录</button></td></tr>";
         tableBody.innerHTML += rowHtml;
       }
@@ -468,8 +453,8 @@
      * 渲染分页
      */
     function renderPagination() {
-      var totalPages = Math.ceil(data.length / rowsPerPage);
-      var next = currentPage + 1 > totalPages ? totalPages : currentPage + 1;
+      // var totalPages = Math.ceil(data.length / rowsPerPage);
+      var next = currentPage + 1;
       var perv = currentPage - 1 > 0 ? currentPage - 1 : 1;
       var paginationHtml =
         '<li class="page-item"><a class="page-link" href="#" onclick="changePage(1)"><<</a></li>';
@@ -493,10 +478,10 @@
         '<li class="page-item"><a class="page-link" href="#" onclick="changePage(' +
         next +
         ')">></a></li>';
-      paginationHtml +=
-        '<li class="page-item"><a class="page-link" href="#" onclick="changePage(' +
-        totalPages +
-        ')">>></a></li>';
+      // paginationHtml +=
+      //   '<li class="page-item"><a class="page-link" href="#" onclick="changePage(' +
+      //   totalPages +
+      //   ')">>></a></li>';
       var paginationContainer = document.getElementById("pagination");
       paginationContainer.innerHTML = paginationHtml;
     }
@@ -523,9 +508,10 @@
     }
 
     async function updateTable(cataTitle) {
-      orgList = await getOrgName();
+      updateType('main');
+      orgList = await getOrgName('/group/organ/gj');
       updateOrgSelect();
-      rowsPerPage = parseInt(document.getElementById("rows-per-page").value);
+      rowsPerPage = 10;
       currentPage = 1;
       SpinnerSwitch(true);
       data = await getAllCata(currentPage, rowsPerPage, cataTitle);
@@ -543,10 +529,11 @@
       SpinnerSwitch(false);
     }
 
-    async function deleteRow(row) {
+    async function deleteRow(guid) {
       SpinnerSwitch(true);
       // 删除目录
-      await deleteCata(row.guide, row.id);
+      getDetail(guid)
+      await deleteCata(guid, currentData.id);
       await updateTable();
       SpinnerSwitch(false);
     }
@@ -560,7 +547,7 @@
 
     function getDetail(id) {
       for (var detail of data) {
-        if (detail.guid === id) {
+        if (detail.guid == id) {
           currentData = detail;
           break;
         }

@@ -55,15 +55,14 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-xs-6 text-left vertical-center">
-          <!-- 右侧元素 -->
+        <!-- <div class="col-xs-6 text-left vertical-center">
           <label for="rows-per-page" style="font-size: 15">每页显示数量:</label>
           <select id="rows-per-page" style="font-size: 15" onchange="updateTable()">
             <option value="50">50</option>
             <option value="100">100</option>
             <option value="150">150</option>
           </select>
-        </div>
+        </div> -->
         <div class="col-xs-6 text-right">
           <nav aria-label="Page navigation">
             <ul class="pagination" id="pagination">
@@ -430,7 +429,7 @@
       var tableBody = document.getElementById("table-body");
       tableBody.innerHTML = ""; // 清空表格内容
 
-      for (var i = startIndex; i < endIndex && i < data.length; i++) {
+      for (var i = startIndex; i < data.length; i++) {
         var row = data[i];
         var rowHtml =
           "<tr><td>" +
@@ -452,9 +451,9 @@
     /**
      * 渲染分页
      */
-    function renderPagination() {
-      var totalPages = Math.ceil(data.length / rowsPerPage);
-      var next = currentPage + 1 > totalPages ? totalPages : currentPage + 1;
+     function renderPagination() {
+      // var totalPages = Math.ceil(data.length / rowsPerPage);
+      var next = currentPage + 1;
       var perv = currentPage - 1 > 0 ? currentPage - 1 : 1;
       var paginationHtml =
         '<li class="page-item"><a class="page-link" href="#" onclick="changePage(1)"><<</a></li>';
@@ -478,10 +477,10 @@
         '<li class="page-item"><a class="page-link" href="#" onclick="changePage(' +
         next +
         ')">></a></li>';
-      paginationHtml +=
-        '<li class="page-item"><a class="page-link" href="#" onclick="changePage(' +
-        totalPages +
-        ')">>></a></li>';
+      // paginationHtml +=
+      //   '<li class="page-item"><a class="page-link" href="#" onclick="changePage(' +
+      //   totalPages +
+      //   ')">>></a></li>';
       var paginationContainer = document.getElementById("pagination");
       paginationContainer.innerHTML = paginationHtml;
     }
@@ -511,7 +510,7 @@
       updateType('gj');
       orgList = await getOrgName('/group/organ/gj');
       updateOrgSelect();
-      rowsPerPage = parseInt(document.getElementById("rows-per-page").value);
+      rowsPerPage = 10;
       currentPage = 1;
       SpinnerSwitch(true);
       data = await getAllCata(currentPage, rowsPerPage, cataTitle);
