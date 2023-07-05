@@ -209,38 +209,38 @@
           <form>
             <div class="form-group">
               <label for="itemNameShow">产生该需求的事项名称</label>
-              <input type="text" class="form-control" id="itemNameShow" placeholder="请输入产生该需求的事项名称" required="true" />
+              <input type="text" class="form-control" id="itemNameShow" placeholder="请输入产生该需求的事项名称" readonly />
             </div>
             <div class="form-group">
               <label for="applySituationShow">应用场景/相关依据</label>
               <input type="text" class="form-control" id="applySituationShow" placeholder="请输入应用场景/相关依据"
-                required="true" />
+              readonly />
             </div>
             <div class="form-group">
               <label for="fileNameShow">材料名称</label>
-              <input type="text" class="form-control" id="fileNameShow" placeholder="请输入文件名称" required="true" />
+              <input type="text" class="form-control" id="fileNameShow" placeholder="请输入文件名称" readonly />
             </div>
             <div class="form-group">
               <label for="needFileShow">是否需要版式文件</label>
-              <select class="form-control" id="needFileShow" required="true">
+              <select class="form-control" id="needFileShow" disabled>
                 <option value="1">是</option>
                 <option value="0">否</option>
               </select>
             </div>
             <div class="form-group">
               <label for="systemNameShow">用数系统名称</label>
-              <input type="text" class="form-control" id="systemNameShow" placeholder="请输入用数系统名称" required="true" />
+              <input type="text" class="form-control" id="systemNameShow" placeholder="请输入用数系统名称" readonly />
             </div>
             <div class="form-group">
               <label for="applyUploadedShow">是否已提交共享申请</label>
-              <select class="form-control" id="applyUploadedShow" required="true">
+              <select class="form-control" id="applyUploadedShow" disabled>
                 <option value="1">是</option>
                 <option value="0">否</option>
               </select>
             </div>
             <div class="form-group" id="rejectReasonDiv" style="display: block">
               <label for="rejectReasonShow">驳回理由</label>
-              <input type="text" class="form-control" id="rejectReasonShow" placeholder="请输入驳回理由" required="true" />
+              <input type="text" class="form-control" id="rejectReasonShow" placeholder="请输入驳回理由" readonly />
             </div>
             <div class="form-group">
               <label for="orgNameShow">数据资源提供方</label>
@@ -253,31 +253,31 @@
             </div>
             <div class="form-group">
               <label for="cataTitleShow">目录名称</label>
-              <input type="text" class="form-control" id="cataTitleShow" placeholder="请输入数据资源目录名称" required="true" />
+              <input type="text" class="form-control" id="cataTitleShow" placeholder="请输入数据资源目录名称" readonly />
             </div>
             <div class="form-group">
               <label for="dataTypeShow">信息项</label>
               <textarea type="text" class="form-control" id="dataTypeShow" rows="3" placeholder="请输入信息项，以逗号隔开"
-                required="true"></textarea>
+              readonly></textarea>
             </div>
             <div class="form-group">
               <label for="dataNameShow">数据名称</label>
-              <input type="text" class="form-control" id="dataNameShow" placeholder="请输入数据名称" required="true" />
+              <input type="text" class="form-control" id="dataNameShow" placeholder="请输入数据名称" readonly />
             </div>
             <div class="form-group">
               <label for="dataSourceShow">数据来源依据</label>
-              <input type="text" class="form-control" id="dataSourceShow" placeholder="数据来源依据" required="true" />
+              <input type="text" class="form-control" id="dataSourceShow" placeholder="数据来源依据" readonly />
             </div>
             <div class="form-group">
               <label for="isInListShow">是否在共享责任清单中</label>
-              <select class="form-control" id="isInListShow" required="true">
+              <select class="form-control" id="isInListShow" disabled>
                 <option value="1">是</option>
                 <option value="0">否</option>
               </select>
             </div>
             <div class="form-group">
               <label for="shareWayShow">共享方式</label>
-              <select class="form-control" id="shareWayShow" required="true">
+              <select class="form-control" id="shareWayShow" disabled>
                 <option value="0101">接口</option>
                 <option value="0102">库表</option>
                 <option value="0103">文件</option>
@@ -285,7 +285,7 @@
             </div>
             <div class="form-group">
               <label for="updateTimeShow">数据更新周期</label>
-              <select class="form-control" id="updateTimeShow" required="true">
+              <select class="form-control" id="updateTimeShow" disabled>
                 <option value="1">其他</option>
                 <option value="2">每日</option>
                 <option value="3">每周</option>
@@ -298,15 +298,15 @@
             </div>
             <div class="form-group">
               <label for="contactPersonShow">联系人</label>
-              <input type="text" class="form-control" id="contactPersonShow" placeholder="联系人" required="true" />
+              <input type="text" class="form-control" id="contactPersonShow" placeholder="联系人" readonly />
             </div>
             <div class="form-group">
               <label for="contactPhoneShow">联系电话</label>
-              <input type="text" class="form-control" id="contactPhoneShow" placeholder="联系电话" required="true" />
+              <input type="text" class="form-control" id="contactPhoneShow" placeholder="联系电话" readonly />
             </div>
             <div class="form-group">
               <label for="contactMailShow">联系邮箱</label>
-              <input type="text" class="form-control" id="contactMailShow" placeholder="联系电话" required="true" />
+              <input type="text" class="form-control" id="contactMailShow" placeholder="联系电话" readonly />
             </div>
         </div>
       </div>
@@ -337,7 +337,7 @@
       $("#applySituationShow").val(currentData.applySituation);
       $("#fileNameShow").val(currentData.fileName);
       $("#needFileShow").val(currentData.needFile);
-      $("#systemNameShow").text(currentData.systemName);
+      $("#systemNameShow").val(currentData.systemName);
       $("#applyUploadedShow").val(currentData.applyUploaded);
       $("#rejectReasonShow").text(currentData.rejectReason);
       $("#orgNameShow").val(currentData.orgName);
@@ -351,7 +351,7 @@
       $("#contactPersonShow").val(currentData.contactPerson);
       $("#contactPhoneShow").val(currentData.contactPhone);
       $("#contactMailShow").val(currentData.contactMail);
-      var rejectReasonDiv = document.getElementById("applyUploadedShow");
+      var rejectReasonDiv = document.getElementById("rejectReasonDiv");
       rejectReasonDiv.style.display =
           currentData.isSystem === "1" ? "block" : "none";
     });

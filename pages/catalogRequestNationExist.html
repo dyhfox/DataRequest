@@ -392,6 +392,7 @@
           }
         }
         newCata.id = currentData ? currentData.id : null;
+        newCata.guid = currentData ? currentData.guid : null;
         await updateNewCata(newCata);
         await updateTable();
         // 在这里执行提交数据的操作，可以使用AJAX请求或其他方式
